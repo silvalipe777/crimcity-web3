@@ -3,7 +3,7 @@ import type { StakingTier } from '../types/game';
 
 export function calculateLevel(experience: number): number {
   let level = 1;
-  let xpNeeded = GAME_CONFIG.XP_PER_LEVEL_BASE;
+  let xpNeeded: number = GAME_CONFIG.XP_PER_LEVEL_BASE;
   let totalXp = 0;
   while (totalXp + xpNeeded <= experience) {
     totalXp += xpNeeded;
