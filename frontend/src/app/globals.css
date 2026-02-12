@@ -1,0 +1,96 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --crims-bg: #0a0a0f;
+  --crims-surface: #12121a;
+  --crims-primary: #e74c3c;
+  --crims-neon: #00ff88;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1e1e2e #0a0a0f;
+}
+
+*::-webkit-scrollbar {
+  width: 6px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #0a0a0f;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #1e1e2e;
+  border-radius: 3px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #2a2a3e;
+}
+
+body {
+  font-family: 'Rajdhani', sans-serif;
+  background-color: var(--crims-bg);
+  color: #e2e8f0;
+  min-height: 100vh;
+}
+
+@layer components {
+  .crims-card {
+    @apply bg-crims-surface border border-crims-border rounded-lg p-4;
+  }
+
+  .crims-btn {
+    @apply px-4 py-2 rounded-lg font-semibold transition-all duration-200 text-sm uppercase tracking-wider;
+  }
+
+  .crims-btn-primary {
+    @apply crims-btn bg-crims-primary hover:bg-crims-primary-dark text-white;
+  }
+
+  .crims-btn-secondary {
+    @apply crims-btn bg-crims-secondary hover:bg-crims-secondary/80 text-white;
+  }
+
+  .crims-btn-accent {
+    @apply crims-btn bg-crims-accent hover:bg-crims-accent-dark text-black;
+  }
+
+  .crims-btn-ghost {
+    @apply crims-btn bg-transparent hover:bg-crims-surface-light text-crims-text border border-crims-border;
+  }
+
+  .crims-input {
+    @apply w-full px-3 py-2 bg-crims-bg border border-crims-border rounded-lg text-crims-text placeholder-crims-muted focus:outline-none focus:border-crims-primary transition-colors;
+  }
+
+  .crims-progress {
+    @apply h-2 bg-crims-bg rounded-full overflow-hidden;
+  }
+
+  .crims-progress-bar {
+    @apply h-full rounded-full transition-all duration-500;
+  }
+
+  .text-glow-red {
+    text-shadow: 0 0 10px rgba(231, 76, 60, 0.5);
+  }
+
+  .text-glow-green {
+    text-shadow: 0 0 10px rgba(0, 255, 136, 0.5);
+  }
+
+  .text-glow-gold {
+    text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
+  }
+}
+
+/* Solana Wallet Adapter overrides */
+.wallet-adapter-button {
+  font-family: 'Rajdhani', sans-serif !important;
+}
